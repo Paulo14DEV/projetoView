@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="show.css">
+<style>
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: cadetblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    border-radius: 15px;
+}
+button{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+</style>
+
+</head>
+<body>
+    <h2>Registros<h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Sobrenome</td>
+                        <td>Ação</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% crud.forEach(function(details) { %>
+                        <tr>
+                            <td>
+                                <%= details.name %>
+                            </td>
+                            <td>
+                                <%= details.surname %>
+                            </td>
+                            <td><a id="edit" href="/edit/<%= details._id %>">Editar</a> - 
+                                <a id="edit" href="/delete/<%= details._id %>">Deletar</a></td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+                <img scr="_images/paisagem.jpg">
+            </table>
+            <button><a href="/">Novo</a></button>
+</body>
+
+</html>
